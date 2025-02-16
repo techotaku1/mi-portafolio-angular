@@ -3,13 +3,12 @@
   "compilerOptions": {
     "outDir": "./dist/browser",
     "types": [],
-    "target": "es2020",
-    "module": "es2020",
+    "target": "ES2022",
+    "module": "ES2022",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "esModuleInterop": true
   },
-  "files": ["src/main.ts"],
-  "include": ["src/**/*.d.ts"],
-  "exclude": ["src/server.ts", "server.ts"]
+  "files": ["src/main.ts", "src/server.ts"],
+  "include": ["src/**/*.d.ts", "src/server.ts"]
 }
