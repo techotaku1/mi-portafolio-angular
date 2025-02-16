@@ -13,28 +13,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/mi-portafolio-angular",
+            "outputPath": "dist/mi-portafolio-angular/browser",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "assets": [{ "glob": "**/*", "input": "public" }],
+            "styles": ["src/styles.css"],
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -72,36 +58,42 @@
           },
           "defaultConfiguration": "development"
         },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/mi-portafolio-angular/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": [{ "glob": "**/*", "input": "public" }],
+            "styles": ["src/styles.css"],
             "scripts": []
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }
@@ -109,8 +101,6 @@
   },
   "cli": {
     "analytics": "a229feee-006f-471f-adc3-ae5bd89caa67",
-    "schematicCollections": [
-      "angular-eslint"
-    ]
+    "schematicCollections": ["angular-eslint"]
   }
 }
