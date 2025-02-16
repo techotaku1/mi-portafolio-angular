@@ -1,0 +1,39 @@
+name: CI/CD for Angular # Nombre del workflow
+
+on:
+  push:
+    branches:
+      - main # Se ejecuta cuando hay un push en la rama main
+  pull_request:
+    branches:
+      - main # También se ejecuta en cada pull request hacia la rama main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # El workflow se ejecuta en una máquina virtual con Ubuntu
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4 # Descarga el código del repositorio (usa la última versión de la acción)
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4 # Configura Node.js en la VM
+        with:
+          node-version: lts/* # Usa la última versión LTS disponible
+          cache: npm # Habilita cache para acelerar futuras ejecuciones
+
+      - name: Install dependencies
+        run: npm ci # Instala dependencias de manera más rápida y confiable
+
+      - name: Run lint
+        run: npm run lint # Ejecuta el análisis de código para detectar errores de estilo o sintaxis
+
+      - name: Run tests
+        run: npm test -- --watch=false --browsers=ChromeHeadless # Ejecuta las pruebas en modo headless con Chrome
+
+      - name: Build Angular app
+        run: npm run build:ssr # Construye la aplicación con soporte para SSR (Server-Side Rendering)
+
+      - name: Deploy to GitHub Pages (Pendiente)
+        if: success() # Solo se ejecutará si todos los pasos anteriores fueron exitosos
+        run: echo "Aquí irá la configuración para desplegar en GitHub Pages" # Se implementará el despliegue en el futuro
