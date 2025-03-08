@@ -2,10 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/mi-portafolio-angular/browser/**/*",
-      "use": "@vercel/static"
+      "src": "src/app/**/*.ts",
+      "use": "@vercel/node"
     }
   ],
+  "outputDirectory": "dist/mi-portafolio-angular/browser",
   "routes": [
     {
       "src": "/(.*)",
