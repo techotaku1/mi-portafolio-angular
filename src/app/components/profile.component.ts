@@ -174,7 +174,7 @@ export class ProfileComponent {
   experience: Experience[] = [
     {
       title: 'Desarrollador Frontend',
-      company: 'Empresa A',
+      company: 'Empresa AA',
       duration: 'Enero 2020 - Presente',
       description: 'Desarrollo de aplicaciones web con Angular y React.',
     },

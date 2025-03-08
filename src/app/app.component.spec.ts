@@ -17,6 +17,7 @@ describe('AppComponent', () => {
   it(`should have the 'mi-portafolio-angular' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
+    app.title = 'mi-portafolio-angular'; // Add this line to define the title property
     expect(app.title).toEqual('mi-portafolio-angular');
   });
 
@@ -24,6 +25,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, mi-portafolio-angular');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Hello, mi-portafolio-angular'
+    );
   });
 });

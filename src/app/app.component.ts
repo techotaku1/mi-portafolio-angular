@@ -12,4 +12,6 @@ import { NavbarComponent } from './components/navbar.component';
   `,
   styles: [],
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'mi-portafolio-angular'; // Add this line to define the title property
+}
