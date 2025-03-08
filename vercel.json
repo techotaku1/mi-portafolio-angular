@@ -12,5 +12,11 @@
       "src": "/(.*)",
       "dest": "/dist/mi-portafolio-angular/browser/$1"
     }
-  ]
+  ],
+  "functions": {
+    "api/index.js": {
+      "memory": 128,
+      "maxDuration": 10
+    }
+  }
 }
