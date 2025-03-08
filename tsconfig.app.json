@@ -9,6 +9,6 @@
     "resolveJsonModule": true,
     "esModuleInterop": true
   },
-  "files": ["src/main.ts", "src/server.ts"],
-  "include": ["src/**/*.d.ts", "src/server.ts"]
+  "files": ["src/main.ts"],
+  "include": ["src/**/*.d.ts"]
 }
