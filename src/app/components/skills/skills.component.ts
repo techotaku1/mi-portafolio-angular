@@ -11,7 +11,6 @@ interface Skill {
 
 @Component({
   selector: 'app-skills',
-  standalone: true,
   imports: [CommonModule, MatCardModule, MatSliderModule, FormsModule],
   template: `
     <mat-card class="skills-card">
