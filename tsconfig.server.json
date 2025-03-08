@@ -10,7 +10,6 @@
     "esModuleInterop": true,
     "allowJs": true
   },
-
   "files": ["src/main.server.ts"],
   "include": ["src/**/*.d.ts"]
 }
