@@ -10,11 +10,11 @@
       "use": "@vercel/node"
     }
   ],
-  "outputDirectory": "dist/mi-portafolio-angular/browser/browser",
+  "outputDirectory": "dist/mi-portafolio-angular/browser",
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/dist/mi-portafolio-angular/browser/browser/$1"
+      "dest": "/dist/mi-portafolio-angular/browser/$1"
     }
   ]
 }
