@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/main.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "src/main.server.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "outputDirectory": "dist/mi-portafolio-angular/browser",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/dist/mi-portafolio-angular/browser/$1"
+    }
+  ]
+}
